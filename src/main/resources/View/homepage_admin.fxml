@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.coursework_orm.controller.HomepageAdminController">
+   <children>
+      <Label layoutX="406.0" layoutY="74.0" prefHeight="36.0" prefWidth="106.0" text="Welcome">
+         <font>
+            <Font name="System Italic" size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblAdminUsername" layoutX="512.0" layoutY="74.0" prefHeight="35.0" prefWidth="137.0" text="USERNAME">
+         <font>
+            <Font name="System Bold Italic" size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="241.0" layoutY="110.0" prefHeight="36.0" prefWidth="573.0" text="to Culinary Academy's Student/Programs Homepage">
+         <font>
+            <Font name="System Italic" size="25.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="230.0" layoutY="300.0" onAction="#btnViewStudentsOnAction" prefHeight="68.0" prefWidth="224.0" ripplerFill="BLACK" style="-fx-background-color: #22a6b3;" text="View Students" textFill="#f8f8f8">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="512.0" layoutY="300.0" onAction="#btnViewCulinaryProgramsOnAction" prefHeight="68.0" prefWidth="304.0" ripplerFill="BLACK" style="-fx-background-color: #6ab04c;" text="View Culinary Programs" textFill="WHITE">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </JFXButton>
+      <Line endX="291.0" layoutX="520.0" layoutY="146.0" startX="-276.0" />
+      <JFXButton layoutX="36.0" layoutY="485.0" onAction="#btnSettingsOnAction" prefHeight="1.0" prefWidth="125.0" ripplerFill="BLACK" style="-fx-background-color: #f0932b;" text="Settings" textFill="#f8f8f8">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <font>
+            <Font size="24.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

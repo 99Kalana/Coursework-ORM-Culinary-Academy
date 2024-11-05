@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.coursework_orm.controller.RoleSelectionPageController">
+   <children>
+      <Label layoutX="253.0" layoutY="106.0" prefHeight="53.0" prefWidth="518.0" text="Who are you?/What's your role?">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="373.0" layoutY="239.0" onAction="#btnAdmissionCoordinatorOnAction" prefHeight="44.0" prefWidth="279.0" style="-fx-background-color: #e67e22;" text="Admission Coordinator" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="373.0" layoutY="331.0" onAction="#btnAdminOnAction" prefHeight="37.0" prefWidth="279.0" style="-fx-background-color: #e67e22;" text="Admin" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="459.0" layoutY="504.0" onAction="#btnExitOnAction" prefHeight="39.0" prefWidth="107.0" style="-fx-background-color: #e74c3c;" text="Exit" textFill="#f8f8f8">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

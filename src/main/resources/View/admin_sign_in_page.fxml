@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.coursework_orm.controller.AdminSignInPageController">
+   <children>
+      <Label layoutX="466.0" layoutY="36.0" prefHeight="45.0" prefWidth="92.0" text="Sign in">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="466.0" layoutY="81.0" prefHeight="45.0" prefWidth="92.0" text="Admin">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Line endX="46.0" layoutX="512.0" layoutY="126.0" startX="-53.0" />
+      <Label layoutX="251.0" layoutY="186.0" prefHeight="35.0" prefWidth="111.0" text="Username">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="251.0" layoutY="262.0" prefHeight="1.0" prefWidth="103.0" text="Password">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtUsername" layoutX="251.0" layoutY="221.0" prefHeight="25.0" prefWidth="522.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Hyperlink layoutX="620.0" layoutY="337.0" onAction="#hyperlinkForgotPasswordOnAction" prefHeight="35.0" prefWidth="153.0" text="Forgot Password?">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Hyperlink>
+      <JFXButton layoutX="382.0" layoutY="405.0" onAction="#btnSignInOnAction" prefHeight="35.0" prefWidth="260.0" style="-fx-background-color: #0abde3;" text="Sign In" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="453.0" layoutY="520.0" onAction="#btnExitOnAction" prefHeight="44.0" prefWidth="111.0" style="-fx-background-color: #ee5253;" text="Exit" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </JFXButton>
+      <PasswordField fx:id="txtPassword" layoutX="251.0" layoutY="297.0" prefHeight="25.0" prefWidth="522.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </PasswordField>
+      <TextField fx:id="txtPasswordVisible" layoutX="251.0" layoutY="297.0" prefHeight="25.0" prefWidth="522.0" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+
+      <!-- CheckBox to toggle password visibility -->
+      <CheckBox fx:id="chkShowPassword" layoutX="780.0" layoutY="304.0" onAction="#togglePasswordVisibility" text="Show Password" />
+
+
+   </children>
+</AnchorPane>

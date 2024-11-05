@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.coursework_orm.controller.SettingsPageAdminController">
+   <children>
+      <Label layoutX="448.0" layoutY="14.0" prefHeight="0.0" prefWidth="128.0" text="Settings">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Line endX="64.0" layoutX="512.0" layoutY="67.0" startX="-64.0" />
+      <JFXButton layoutX="346.0" layoutY="228.0" onAction="#btnResetUsernamePasswordOnAction" prefHeight="51.0" prefWidth="333.0" style="-fx-background-color: #3498db;" text="Reset Username/Password" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="421.0" layoutY="355.0" onAction="#btnLogoutOnAction" prefHeight="1.0" prefWidth="183.0" style="-fx-background-color: #e74c3c;" text="Logout" textFill="#ebebeb">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="36.0" layoutY="21.0" onAction="#btnBackOnAction" prefHeight="39.0" prefWidth="89.0" style="-fx-background-color: #2980b9;" text="Back" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

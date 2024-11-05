@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="root" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.coursework_orm.controller.AdminSignupPageController">
+   <children>
+      <Label layoutX="463.0" layoutY="25.0" prefHeight="45.0" prefWidth="103.0" text="Sign up">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="464.0" layoutY="70.0" prefHeight="45.0" prefWidth="88.0" text="Admin">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Line endX="38.0" layoutX="514.0" layoutY="115.0" startX="-47.0" />
+      <Label layoutX="253.0" layoutY="145.0" prefHeight="35.0" prefWidth="82.0" text="User ID">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="248.0" layoutY="281.0" prefHeight="35.0" prefWidth="111.0" text="Username">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtUserID" layoutX="253.0" layoutY="180.0" prefHeight="25.0" prefWidth="522.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtUsername" layoutX="251.0" layoutY="316.0" prefHeight="25.0" prefWidth="522.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <JFXButton layoutX="402.0" layoutY="455.0" onAction="#btnSignUpOnAction" prefHeight="44.0" prefWidth="227.0" style="-fx-background-color: #e67e22;" text="Sign Up" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="460.0" layoutY="531.0" onAction="#btnExitOnAction" prefHeight="44.0" prefWidth="111.0" style="-fx-background-color: #ee5253;" text="Exit" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="252.0" layoutY="346.0" prefHeight="1.0" prefWidth="103.0" text="Password">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtPassword" layoutX="251.0" layoutY="388.0" prefHeight="25.0" prefWidth="522.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Text layoutX="254.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remember or Write down this generated User ID for future changes in your Username or Password ; purpose." wrappingWidth="522.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

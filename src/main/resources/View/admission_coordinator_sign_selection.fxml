@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.coursework_orm.controller.AdmissionCoordinatorSignSelectionController">
+   <children>
+      <Label layoutX="327.0" layoutY="77.0" prefHeight="0.0" prefWidth="370.0" text="Admission Coordinator">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="417.0" layoutY="237.0" onAction="#btnSignInOnAction" prefHeight="51.0" prefWidth="207.0" style="-fx-background-color: #3498db;" text="Sign in" textFill="#fcfcfc">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="417.0" layoutY="331.0" onAction="#btnSignUpOnAction" prefHeight="51.0" prefWidth="207.0" style="-fx-background-color: #e67e22;" text="Sign up" textFill="#fcfcfc">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="469.0" layoutY="514.0" onAction="#btnExitOnAction" prefHeight="39.0" prefWidth="107.0" style="-fx-background-color: #e74c3c;" text="Exit" textFill="#f8f8f8">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
