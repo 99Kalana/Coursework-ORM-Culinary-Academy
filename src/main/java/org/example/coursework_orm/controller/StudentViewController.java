@@ -104,6 +104,8 @@ public class StudentViewController {
         txtEmail.setText("");
         txtMobileNumber.setText("");
         txtAddress.setText("");
+        lblProgramName.setText("");
+        cmbSelectedProgram.setValue("");
     }
 
     private void setCellValueFactory(){
