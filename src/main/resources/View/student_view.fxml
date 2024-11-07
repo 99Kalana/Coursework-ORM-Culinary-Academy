@@ -118,7 +118,7 @@
       </Text>
       <Label fx:id="lblProgramName" layoutX="662.0" layoutY="222.0" prefHeight="27.0" prefWidth="335.0" text="PROGRAM">
          <font>
-            <Font size="18.0" />
+            <Font size="14.0" />
          </font>
       </Label>
       <JFXButton layoutX="64.0" layoutY="257.0" onAction="#btnClearOnAction" prefHeight="30.0" prefWidth="81.0" style="-fx-background-color: #48dbfb;" text="Clear" textFill="WHITE">
