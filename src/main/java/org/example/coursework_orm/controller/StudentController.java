@@ -128,6 +128,7 @@ public class StudentController {
             if(isSaved){
                 new Alert(Alert.AlertType.CONFIRMATION, "Student details added!").show();
                 clearFields();
+                getCurrentStudentID();
             }else {
                 new Alert(Alert.AlertType.ERROR, "Error in add student details!").show();
             }
