@@ -57,9 +57,9 @@ public class StudentViewController {
         loadAllStudents();
     }
 
+    //=====================================================================================================
 
-
-    public void txtSearchOnAction(ActionEvent event) {
+    /*public void txtSearchOnAction(ActionEvent event) {
         String studentID = txtStudentID.getText();
 
         try {
@@ -80,7 +80,50 @@ public class StudentViewController {
         }catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+    }*/
+
+    //========================================================================================================
+    public void txtSearchOnAction(ActionEvent event) {
+        String studentID = txtStudentID.getText();
+
+        try {
+            StudentsDTO studentsDTO = studentsBO.searchByID(studentID);
+            if (studentsDTO != null) {
+
+                txtFirstname.setText(studentsDTO.getFirstName());
+                txtLastname.setText(studentsDTO.getLastName());
+                txtEmail.setText(studentsDTO.getEmail());
+                txtMobileNumber.setText(String.valueOf(studentsDTO.getMobileNumber()));
+                txtAddress.setText(studentsDTO.getAddress());
+
+
+                String selectedCourses = studentsDTO.getSelectedCourse();
+
+                if (selectedCourses != null && !selectedCourses.isEmpty()) {
+
+                    String[] programs = selectedCourses.split(",");
+
+                    StringBuilder programNames = new StringBuilder();
+                    for (String program : programs) {
+                        if (programNames.length() > 0) {
+                            programNames.append(", ");
+                        }
+                        programNames.append(program.trim());
+                    }
+
+                    lblProgramName.setText(programNames.toString());
+                } else {
+                    lblProgramName.setText("No programs selected");
+                }
+            } else {
+                new Alert(Alert.AlertType.WARNING, "Student data not found!").show();
+                clearFields();
+            }
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        }
     }
+    //========================================================================================================
 
     public void btnBackOnAction(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(this.getClass().getResource("/View/homepage_admin.fxml"));
