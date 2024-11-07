@@ -5,6 +5,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -20,10 +21,8 @@ import org.example.coursework_orm.dto.StudentsDTO;
 import org.example.coursework_orm.entity.Admin;
 import org.example.coursework_orm.entity.Admission_Coordinator;
 import org.example.coursework_orm.entity.Culinary_Programs;
-import org.example.coursework_orm.model.tm.CulinaryProgramsTM;
+import com.jfoenix.controls.JFXButton;
 import org.example.coursework_orm.model.tm.StudentsTM;
-import org.example.coursework_orm.util.CulinaryProgramRegex;
-import org.example.coursework_orm.util.CulinaryProgramTextField;
 import org.example.coursework_orm.util.StudentRegex;
 import org.example.coursework_orm.util.StudentTextField;
 
@@ -33,6 +32,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 public class StudentController {
     public AnchorPane root;
@@ -141,7 +141,9 @@ public class StudentController {
 
     }
 
-    public void btnUpdateOnAction(ActionEvent event) {
+    //===============================================================================================================
+
+    /*public void btnUpdateOnAction(ActionEvent event) {
         String studentID = txtStudentID.getText();
         Date date = java.sql.Date.valueOf(lblDate.getText());
         String firstName = txtFirstname.getText();
@@ -174,7 +176,57 @@ public class StudentController {
         }
         loadAllStudents();
 
+    }*/
+
+    //==============================================================================================================================
+    public void btnUpdateOnAction(ActionEvent event) {
+        String studentID = txtStudentID.getText();
+        Date date = java.sql.Date.valueOf(lblDate.getText());
+        String firstName = txtFirstname.getText();
+        String lastName = txtLastname.getText();
+        String email = txtEmail.getText();
+        int mobileNumber = Integer.parseInt(txtMobileNumber.getText());
+        String address = txtAddress.getText();
+
+        // Create Culinary_Programs object for the selected program
+        Culinary_Programs newProgram = new Culinary_Programs();
+        newProgram.setProgramID((String) cmbSelectedProgram.getValue());
+
+        // Retrieve the existing student data
+        try {
+            StudentsDTO existingStudent = studentsBO.searchByID(studentID);
+            if (existingStudent != null) {
+                // Combine existing selected course with the new one
+                String existingCourses = existingStudent.getSelectedCourse();
+                String newSelectedCourse = lblProgramName.getText();
+
+                // Assuming courses are separated by commas, adjust as needed
+                String combinedCourses = existingCourses + ", " + newSelectedCourse;
+
+
+                StudentsDTO studentsDTO = new StudentsDTO(studentID, date, firstName, lastName, email,
+                        mobileNumber, address, combinedCourses,
+                        newProgram, null, null);
+
+                boolean isUpdated = studentsBO.update(studentsDTO);
+
+                if (isUpdated) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "Student details updated!").show();
+                    clearFields();
+                    getCurrentStudentID();
+                } else {
+                    new Alert(Alert.AlertType.ERROR, "Error in updating student details!").show();
+                }
+            } else {
+                new Alert(Alert.AlertType.WARNING, "Student not found for update!").show();
+            }
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, "Error during update: " + e.getMessage()).show();
+        }
+        loadAllStudents();
     }
+
+    //==============================================================================================================================
 
     public void btnDeleteOnAction(ActionEvent event) {
         String studentID = txtStudentID.getText();
@@ -301,7 +353,9 @@ public class StudentController {
 
     }
 
-    public void txtSearchOnAction(ActionEvent event) {
+    //================================================================================================================================
+
+   /* public void txtSearchOnAction(ActionEvent event) {
         String studentID = txtStudentID.getText();
 
         try {
@@ -333,7 +387,54 @@ public class StudentController {
         }catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+    }*/
+    //======================================================================================================================================
+
+    public void txtSearchOnAction(ActionEvent event) {
+        String studentID = txtStudentID.getText();
+
+        try {
+            StudentsDTO studentsDTO = studentsBO.searchByID(studentID);
+            if (studentsDTO != null) {
+
+                txtFirstname.setText(studentsDTO.getFirstName());
+                txtLastname.setText(studentsDTO.getLastName());
+                txtEmail.setText(studentsDTO.getEmail());
+                txtMobileNumber.setText(String.valueOf(studentsDTO.getMobileNumber()));
+                txtAddress.setText(studentsDTO.getAddress());
+
+
+                String selectedCourses = studentsDTO.getSelectedCourse();
+
+
+                if (selectedCourses != null && !selectedCourses.isEmpty()) {
+
+                    String[] programs = selectedCourses.split(",");
+
+
+                    StringBuilder programNames = new StringBuilder();
+                    for (String program : programs) {
+                        if (programNames.length() > 0) {
+                            programNames.append(", ");
+                        }
+                        programNames.append(program.trim());
+                    }
+
+
+                    lblProgramName.setText(programNames.toString());
+                } else {
+                    lblProgramName.setText("No programs selected");
+                }
+            } else {
+                new Alert(Alert.AlertType.WARNING, "Student data not found!").show();
+                clearFields();
+            }
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        }
     }
+
+    //======================================================================================================================================
 
     public void txtEmailOnKeyReleased(KeyEvent keyEvent) {
         StudentRegex.setTextColour(StudentTextField.EMAIL,txtEmail);
