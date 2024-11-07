@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
@@ -9,7 +10,6 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<?import javafx.scene.control.CheckBox?>
 <AnchorPane fx:id="root" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.coursework_orm.controller.AdmissionCoordinatorSignInPageController">
    <children>
       <Label layoutX="466.0" layoutY="31.0" prefHeight="45.0" prefWidth="92.0" text="Sign in">
@@ -38,7 +38,7 @@
             <Font size="14.0" />
          </font>
       </TextField>
-      <Hyperlink layoutX="620.0" layoutY="332.0" onAction="#hyperlinkForgotPasswordOnAction" prefHeight="35.0" prefWidth="153.0" text="Forgot Password?">
+      <Hyperlink layoutX="513.0" layoutY="332.0" onAction="#hyperlinkForgotPasswordOnAction" prefHeight="35.0" prefWidth="260.0" text="Forgot Username or Password?">
          <font>
             <Font size="18.0" />
          </font>

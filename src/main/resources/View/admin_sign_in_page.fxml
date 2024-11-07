@@ -38,7 +38,7 @@
             <Font size="14.0" />
          </font>
       </TextField>
-      <Hyperlink layoutX="620.0" layoutY="337.0" onAction="#hyperlinkForgotPasswordOnAction" prefHeight="35.0" prefWidth="153.0" text="Forgot Password?">
+      <Hyperlink layoutX="513.0" layoutY="337.0" onAction="#hyperlinkForgotPasswordOnAction" prefHeight="35.0" prefWidth="260.0" text="Forgot Username or Password?">
          <font>
             <Font size="18.0" />
          </font>
